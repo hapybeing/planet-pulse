@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>The Planet, Live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="title-row">
+    <h1>The Planet, Live<span class="pulse-dot"></span></h1>
+    <div class="status-line" id="status">connecting…</div>
+  </div>
+  <div class="legend">
+    <span><i class="swatch" style="background:#5b8c5a"></i>&lt; 3</span>
+    <span><i class="swatch" style="background:#c9a227"></i>3–4.4</span>
+    <span><i class="swatch" style="background:#c9752f"></i>4.5–5.9</span>
+    <span><i class="swatch" style="background:#c23f2f"></i>6+</span>
+    <span><i class="swatch" style="background:#7fb3c9"></i>ISS</span>
+  </div>
+</header>
+
+<main>
+  <svg id="map" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <radialGradient id="oceanGrad" cx="50%" cy="42%" r="75%">
+        <stop offset="0%" stop-color="#161c1f"/>
+        <stop offset="55%" stop-color="#12161a"/>
+        <stop offset="100%" stop-color="#0b0d10"/>
+      </radialGradient>
+    </defs>
+  </svg>
+</main>
+
+<div id="seismo-wrap"><canvas id="seismo"></canvas></div>
+
+<footer id="footer"><span class="label">reading the feed…</span></footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
